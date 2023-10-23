@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width"/>
+
+<div th:replace="~{fragments/bootstraplinks :: links}"></div>
+
+<title>AlgaWorks</title>
+
+<link rel="stylesheet" th:href="@{/css/estilo.css}" />
+
+</head>
+
+<body>
+	
+	<div th:replace="~{fragments/header :: cabecalho}"></div>
+		
+	<main class="container-fluid mt-3">
+		<section>
+			<h1 class="fs-4 fw-semibold">Seja bem vindo(a)!</h1>
+		</section>
+	</main>
+</body>
+
+</html>
