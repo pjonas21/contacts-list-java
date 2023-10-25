@@ -15,9 +15,9 @@
 </head>
 
 <body>
-	<div th:replace="~{fragments/header :: cabecalho}"></div>
+	<div th:replace="~{fragments/header :: cabecalho2}"></div>
 	
-	<main class="container">
+	<main class="container-fluid col-9 mt-3 justify-content-center">
 		<section>
 			<h1>Cadastro contatos</h1>
 		</section>
@@ -25,31 +25,38 @@
 		<section>
 			<form th:action="${contato.novo} ? @{/contatos} : @{/contatos/{contato}(contato=${contato.id})}" 
 				th:object="${contato}" th:method="${contato.novo} ? post : put">
+				<input type="hidden" name="_method" th:value="${contato.novo} ? post : put">
 				
 				<div th:if="${!contato.novo}">
-					<label>Código: </label> 
+					<label class="form-label">Código: </label> 
 					
-					<input th:field="*{id}" readonly="readonly" />
+					<input class="form-control" th:field="*{id}" readonly="readonly" />
 				</div>
 				
 				<div>
-					<label>Nome: </label> 
+					<label class="form-label">Nome: </label> 
 					
-					<input th:field="*{nome}" />
+					<input class="form-control" th:field="*{nome}" />
+				</div>
+				
+				<div>
+					<label class="form-label">DDD: </label> 
+					
+					<input class="form-control" th:field="*{ddd}"/>
 				</div>
 
 				<div>
-					<label>Telefone: </label> 
+					<label class="form-label">Telefone: </label> 
 					
-					<input th:field="*{telefone}"/>
+					<input class="form-control" th:field="*{telefone}"/>
 				</div>
 
-				<div>
-					<button>Salvar</button>
+				<div class="mt-4">
+					<button type="submit" class="btn btn-primary">Salvar</button>
 				</div>
 			</form>
 		</section>
 	</main>
 </body>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </html>
