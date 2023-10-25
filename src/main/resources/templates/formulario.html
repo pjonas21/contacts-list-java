@@ -19,10 +19,10 @@
 	
 	<main class="container-fluid col-9 mt-3 justify-content-center">
 		<section>
-			<h1>Cadastro contatos</h1>
+			<h1 class="fw-bold">Cadastro contatos</h1>
 		</section>
 
-		<section>
+		<section class="col-md-9">
 			<form th:action="${contato.novo} ? @{/contatos} : @{/contatos/{contato}(contato=${contato.id})}" 
 				th:object="${contato}" th:method="${contato.novo} ? post : put">
 				<input type="hidden" name="_method" th:value="${contato.novo} ? post : put">
