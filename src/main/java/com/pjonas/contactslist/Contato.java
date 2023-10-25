@@ -16,14 +16,16 @@ public class Contato {
 		this.telefone = telefone;
 	}
 	
+	public boolean isNovo() {
+		return id == null;
+	}
+	
 	public String getId() {
 		return id;
 	}
-	
 	public void setId(String id) {
 		this.id = id;
 	}
-	
 	public String getNome() {
 		return nome;
 	}
@@ -42,6 +44,13 @@ public class Contato {
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
+
+	@Override
+	public String toString() {
+		return "Contato [id=" + id + ", nome=" + nome + ", ddd=" + ddd + ", telefone=" + telefone + "]";
+	}
+	
+	
 	
 	
 
